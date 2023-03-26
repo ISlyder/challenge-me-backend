@@ -1,12 +1,11 @@
 package com.duviv.challenge.country.service;
 
-import com.duviv.challenge.country.model.Continent;
 import com.duviv.challenge.country.model.CountriesList;
 import com.duviv.challenge.country.model.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
@@ -18,10 +17,9 @@ public class CountryService {
 
     @Autowired
     public CountryService() {
-        countries = new ArrayList<>();
-        for (CountriesList c : CountriesList.values()) {
-            countries.add(c.getCountry());
-        }
+        countries = Arrays.stream(CountriesList.values())
+                .map(CountriesList::getCountry)
+                .collect(Collectors.toList());
     }
 
     public Country getCountryByName(String name) {

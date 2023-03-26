@@ -3,7 +3,7 @@ version: "3"
 services:
   challenge-me:
     build:
-      context: ../..
+      context: ..
       dockerfile: ./Dockerfile
     container_name: challenge-back
     env_file:
