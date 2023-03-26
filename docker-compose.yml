@@ -6,7 +6,7 @@ services:
     ports:
       - "8084:8080"
     networks:
-      challenge-net:
+      net:
   challenge-db:
     image: postgres:12
     container_name: challenge-db
@@ -17,10 +17,10 @@ services:
     ports:
       - "5432:5432"
     networks:
-      challenge-net:
+      net:
 
 volumes:
   challenge-data:
 networks:
-  challenge-net:
+  net:
 
