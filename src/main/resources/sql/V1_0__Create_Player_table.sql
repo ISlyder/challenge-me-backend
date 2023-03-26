@@ -1,0 +1,7 @@
+CREATE TABLE public.player
+(
+    id      BIGSERIAL PRIMARY KEY,
+    pseudo    VARCHAR NOT NULL,
+);
+
+ALTER SEQUENCE player_id_seq RESTART 100000 INCREMENT BY 50;

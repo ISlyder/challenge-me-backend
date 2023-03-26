@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  challenge-me:
+    build:
+      context: ../
+      dockerfile: ./Dockerfile
+    container_name: challenge-back
+    env_file:
+      - .env
+    depends_on:
+      - challenge-db
+    networks:
+      challenge-net:
