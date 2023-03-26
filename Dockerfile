@@ -2,7 +2,7 @@ FROM arm64v8/maven AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src/ ./src/
-RUN mvn package
+RUN mvn clean package -DskipTests
 
 FROM adoptopenjdk/openjdk14
 WORKDIR /app
